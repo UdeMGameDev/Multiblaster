@@ -12,7 +12,7 @@ public class BgScroller : MonoBehaviour {
 	void Start () {
         startPosition = transform.position;
 	}
-
+///
 	void Update () {
         float newPosition = Mathf.Repeat(Time.time * scrollSpeed, tileSizeY);
         transform.position = startPosition + Vector2.up * newPosition;
