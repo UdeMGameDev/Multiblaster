@@ -7,6 +7,8 @@ public class Boundary
     public float xMin, xMax, yMin, yMax;
 }
 
+//Commentaire!!!
+
 public class PlayerController : MonoBehaviour
 {
     private GameController gameController; //GameController == Class, gameController == one instance of the class
