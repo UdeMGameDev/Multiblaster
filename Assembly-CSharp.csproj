@@ -59,7 +59,6 @@
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\Mover.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
-     <Compile Include="Assets\Scripts\waveCreator.cs" />
      <Compile Include="Assets\Scripts\WeaponController.cs" />
      <None Include="Assets\Fonts\airstrike\airstrike.txt" />
  <Reference Include="UnityEngine.UI">
