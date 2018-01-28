@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\AudioSequence.cs" />
      <Compile Include="Assets\Scripts\BgScroller.cs" />
      <Compile Include="Assets\Scripts\DestroyByBoundary.cs" />
      <Compile Include="Assets\Scripts\DestroyByContact.cs" />
