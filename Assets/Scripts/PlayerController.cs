@@ -7,7 +7,6 @@ public class Boundary
     public float xMin, xMax, yMin, yMax;
 }
 
-//Changement
 
 public class PlayerController : MonoBehaviour
 {
