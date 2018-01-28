@@ -113,6 +113,61 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &1692959
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4848340968868144, guid: 649c9c2b6f2351a4f944974d5f93de29, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848340968868144, guid: 649c9c2b6f2351a4f944974d5f93de29, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -3.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848340968868144, guid: 649c9c2b6f2351a4f944974d5f93de29, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848340968868144, guid: 649c9c2b6f2351a4f944974d5f93de29, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848340968868144, guid: 649c9c2b6f2351a4f944974d5f93de29, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848340968868144, guid: 649c9c2b6f2351a4f944974d5f93de29, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848340968868144, guid: 649c9c2b6f2351a4f944974d5f93de29, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848340968868144, guid: 649c9c2b6f2351a4f944974d5f93de29, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 61702967091955250, guid: 649c9c2b6f2351a4f944974d5f93de29,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848340968868144, guid: 649c9c2b6f2351a4f944974d5f93de29, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848340968868144, guid: 649c9c2b6f2351a4f944974d5f93de29, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 649c9c2b6f2351a4f944974d5f93de29, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &65592184
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,7 +845,7 @@ MonoBehaviour:
     xMax: 6.5
     yMin: -4.5
     yMax: 4.5
-  shot: {fileID: 1358589110471596, guid: 913b5d25e0424b940b4826ce8c537b48, type: 2}
+  shot: {fileID: 1033224886872682, guid: 649c9c2b6f2351a4f944974d5f93de29, type: 2}
   fireRate: 0.25
   speed: 6
 --- !u!50 &1028638159
