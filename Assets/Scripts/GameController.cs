@@ -11,6 +11,8 @@ public class GameController : MonoBehaviour {
 
     public GameObject[] hazards;
 
+    public Wave[] waves;
+
     public Vector2 spawnValues;
 
     public Text scoreText;
@@ -18,6 +20,7 @@ public class GameController : MonoBehaviour {
     public Text gameOverText;
     public Text quitText;
     public Text readyText;
+    public Text warningText;
 
     private bool gameOver;
     private bool restart;
@@ -62,10 +65,12 @@ public class GameController : MonoBehaviour {
         gameOverText.text = ("");
         quitText.text = ("");
         readyText.text = ("");
+        warningText.text = ("");
+
 
         score = 0;
 
-            StartCoroutine(SpawnWaves());
+        StartCoroutine(SpawnWaves());
     }
 
     private void Update()
@@ -88,15 +93,19 @@ public class GameController : MonoBehaviour {
         StartCoroutine(Flicker(readyText, "Get ready!", flickerNumber)); //Get ready flicker
 
         yield return new WaitForSeconds(startWait + flickerWait * flickerNumber); //To wait for the player to mentally prepare
-        while (true)
+        
+        for (int i = 0; i< waves.Length; i++)
         {
-            for (int i = 0; i < hazardCount; i++)
+            Wave currentWave = waves[i];
+
+            if (currentWave.enemyOnly) StartCoroutine(Flicker(warningText, "Prepare to fire!", 4));
+            yield return new WaitForSeconds(startWait + flickerWait * flickerNumber); //To wait for the player to mentally prepare
+
+            for (int j = 0; j < currentWave.enemyCount; j++)
             {
-                GameObject hazard = hazards[Random.Range(0, hazards.Length)];
                 Vector2 spawnPosition = new Vector2(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y);
-				Instantiate(hazard, spawnPosition, Quaternion.identity); //identity == aucune rotation
-                yield return new WaitForSeconds(spawnWait);
-            
+                currentWave.SpawnEnemy(spawnPosition);
+                yield return new WaitForSeconds(currentWave.spawnWait);
 
             if (gameOver)
                 {
