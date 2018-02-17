@@ -27,7 +27,6 @@ public class Wave : MonoBehaviour {
  	public void SpawnEnemy(Vector2 position){
 		GameObject enemy = enemies[Random.Range(0, enemies.Length)];
 		Instantiate(enemy, position, Quaternion.identity); //identity == aucune rotation
-		Debug.Log("Spawned");
 	}
 
 }

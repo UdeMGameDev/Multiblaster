@@ -18,12 +18,6 @@ public class AudioSequence : MonoBehaviour
         StartCoroutine(playSequence());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     IEnumerator playSequence()
     {
         for (int i = 0; i < clips.Length; i++)

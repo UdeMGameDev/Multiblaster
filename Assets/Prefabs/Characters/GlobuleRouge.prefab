@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1654669179208196, guid: 58b80948c60934447b8a880c01a752a5, type: 2}
-  playerExplosion: {fileID: 1654669179208196, guid: 58b80948c60934447b8a880c01a752a5,
+  playerExplosion: {fileID: 1290511506993658, guid: 712eefaa4a360084c9467c729b90621d,
     type: 2}
   scoreValue: 1
 --- !u!114 &114515973400777592
