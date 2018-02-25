@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 199785461673840030}
   - component: {fileID: 114043740539915768}
   m_Layer: 0
-  m_Name: ShipExplosionClip
+  m_Name: ShipExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

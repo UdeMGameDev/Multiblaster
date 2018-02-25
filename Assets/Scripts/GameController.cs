@@ -34,6 +34,10 @@ public class GameController : MonoBehaviour {
     public float flickerWait; //Time between flickers of text
     public int flickerNumber; //Number of flickers
 
+    public FloatReference goodHealth;
+    public FloatReference badHealth;
+    public FloatReference maxGoodHealth;
+    public FloatReference maxBadHealth;
 
     IEnumerator Flicker (Text textObj, string text, int flickerNumber = 4, bool loop = false)
     {
@@ -69,6 +73,8 @@ public class GameController : MonoBehaviour {
 
 
         score = 0;
+
+        InitializeVariables();
 
         StartCoroutine(SpawnWaves());
     }
@@ -119,6 +125,11 @@ public class GameController : MonoBehaviour {
             }
             yield return new WaitForSeconds(waveWait);
         }
+    }
+
+    private void InitializeVariables(){
+        goodHealth.variable.value = maxGoodHealth.value;
+        badHealth.variable.value = maxBadHealth.value;
     }
 
     void UpdateScore() //To update the score on the GUI text

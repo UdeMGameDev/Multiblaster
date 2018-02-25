@@ -181,8 +181,12 @@ Assets/Scripts/DestroyByBoundary.cs
 Assets/Scripts/DestroyByContact.cs
 Assets/Scripts/DestroyByTime.cs
 Assets/Scripts/EvasiveManeuver.cs
+Assets/Scripts/FloatReference.cs
+Assets/Scripts/FloatVariable.cs
 Assets/Scripts/GameController.cs
 Assets/Scripts/Mover.cs
+Assets/Scripts/NewBehaviourScript.cs
+Assets/Scripts/ParticleSequence.cs
 Assets/Scripts/PlayerController.cs
 Assets/Scripts/Wave.cs
 Assets/Scripts/WeaponController.cs
