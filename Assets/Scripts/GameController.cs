@@ -9,6 +9,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour {
 
+    public int waveCount = 0;
     public GameObject[] hazards;
 
     public Wave[] waves;
@@ -27,10 +28,7 @@ public class GameController : MonoBehaviour {
 
     private int score;
 
-    public int hazardCount;
-    public float spawnWait; //Time between spawns
-    public float startWait; //Time before the game starts
-    public float waveWait; //Time between waves
+    public float startWait = 1f;
     public float flickerWait; //Time between flickers of text
     public int flickerNumber; //Number of flickers
 
@@ -100,20 +98,25 @@ public class GameController : MonoBehaviour {
 
         yield return new WaitForSeconds(startWait + flickerWait * flickerNumber); //To wait for the player to mentally prepare
         
-        for (int i = 0; i< waves.Length; i++)
+        while (true)
         {
-            Wave currentWave = waves[i];
 
-            if (currentWave.enemyOnly) StartCoroutine(Flicker(warningText, "Prepare to fire!", 4));
+        
+            Wave currentWave = GenerateWave(waveCount);
+            Debug.Log(currentWave.enemyCount);
+
+            if (!currentWave.noEnemies) StartCoroutine(Flicker(warningText, "Prepare to fire!", 4));
+
             yield return new WaitForSeconds(startWait + flickerWait * flickerNumber); //To wait for the player to mentally prepare
 
             for (int j = 0; j < currentWave.enemyCount; j++)
             {
                 Vector2 spawnPosition = new Vector2(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y);
-                currentWave.SpawnEnemy(spawnPosition);
+                GameObject enemy = currentWave.SpawnEnemy(spawnPosition);
+                Instantiate(enemy, spawnPosition, Quaternion.identity);
                 yield return new WaitForSeconds(currentWave.spawnWait);
 
-            if (gameOver)
+                if (gameOver)
                 {
                     restartText.text = ("Press R to restart");
                     quitText.text = ("Press Escape to quit");
@@ -123,8 +126,13 @@ public class GameController : MonoBehaviour {
                     break;
                 }
             }
-            yield return new WaitForSeconds(waveWait);
+            yield return new WaitForSeconds(1f);
+
+            waveCount += 1;
+
         }
+
+        
     }
 
     private void InitializeVariables(){
@@ -147,5 +155,50 @@ public class GameController : MonoBehaviour {
     {
         gameOverText.text = ("Game Over!");
         gameOver = true;
+    }
+
+    public Wave GenerateWave(int waveCount)
+    {
+        int enemyCount = 10 + waveCount + Random.Range(0, waveCount / 5);
+        float spawnWait = -(0.15f * waveCount) + 2f;
+        if (spawnWait < 0.2f)
+        {
+            spawnWait = 0.2f;
+        }
+
+        GameObject[] enemyTypes;
+
+        bool noEnemies;
+        if (spawnWait % 5 == 0)
+        {
+            noEnemies = true;
+            enemyTypes = new GameObject[]{hazards[0]};
+        }
+        else
+        {
+            noEnemies = false;
+            enemyTypes = GenerateEnemyTypes(waveCount);
+        }
+
+
+        return new Wave(enemyTypes, enemyCount, spawnWait, noEnemies);
+    }
+
+
+
+    public GameObject[] GenerateEnemyTypes(int waveCount)
+    {
+        GameObject[] enemyTypes;
+
+        if (waveCount % 3 == 0)
+        {
+            enemyTypes = new GameObject[]{hazards[1], hazards[2]};
+        }
+        else
+        {
+            enemyTypes = new GameObject[]{hazards[Random.Range(0,hazards.Length)]};
+        }
+
+        return enemyTypes;
     }
 }
