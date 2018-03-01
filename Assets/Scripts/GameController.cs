@@ -34,10 +34,10 @@ public class GameController : MonoBehaviour {
     public float flickerWait; //Time between flickers of text
     public int flickerNumber; //Number of flickers
 
-    public FloatReference goodHealth;
-    public FloatReference badHealth;
-    public FloatReference maxGoodHealth;
-    public FloatReference maxBadHealth;
+    public FloatReference hostHealth;
+    public FloatReference shipHealth;
+    public FloatReference maxHostHealth;
+    public FloatReference maxShipHealth;
 
     IEnumerator Flicker (Text textObj, string text, int flickerNumber = 4, bool loop = false)
     {
@@ -128,8 +128,8 @@ public class GameController : MonoBehaviour {
     }
 
     private void InitializeVariables(){
-        goodHealth.variable.value = maxGoodHealth.value;
-        badHealth.variable.value = maxBadHealth.value;
+        hostHealth.variable.value = maxHostHealth.value;
+        shipHealth.variable.value = maxShipHealth.value;
     }
 
     void UpdateScore() //To update the score on the GUI text
