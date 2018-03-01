@@ -8,7 +8,8 @@ public class DestroyByContact : MonoBehaviour {
     public GameObject playerExplosion;
     private GameController gameController; //GameController == Class, gameController == one instance of the class
 
-    public int scoreValue;
+    public int HPValue; //how much it affects the (good or bad) hp bar
+    public FloatReference affectedHP;
 
     private void Start()
     {
@@ -48,14 +49,14 @@ public class DestroyByContact : MonoBehaviour {
             Instantiate(explosion, transform.position, transform.rotation); //Asteroid explosion
             }
 
-        //Player explosion if the ship runs into the asteroid
+        //Player explosion if the ship runs into an enemy
         if (other.CompareTag ("Player"))
         {
             Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
             gameController.GameOver();
         }
 
-        gameController.AddScore(scoreValue); //Adds the score for shooting an asteroid
+        affectedHP.variable.value += HPValue;
         Destroy(other.gameObject); //This is destroyed at the end of the frame
         Destroy(gameObject);
     }

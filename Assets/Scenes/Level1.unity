@@ -129,7 +129,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &65592185
 RectTransform:
   m_ObjectHideFlags: 0
@@ -228,10 +228,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 1964871497843174, guid: a9a09f0ea0fe36f4ba245ed9d0754cfc, type: 2}
+  - {fileID: 1823595345856088, guid: 7fecd36682407ee47aac6f891f2dca46, type: 2}
   enemyCount: 5
   spawnWait: 0.8
-  enemyOnly: 0
+  enemyOnly: 1
 --- !u!1 &231507580
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,6 +442,22 @@ MonoBehaviour:
   waveWait: 1
   flickerWait: 0.5
   flickerNumber: 4
+  goodHealth:
+    useConstant: 0
+    constantValue: 0
+    variable: {fileID: 11400000, guid: 93c589c5a560d72489d211da93dc861d, type: 2}
+  badHealth:
+    useConstant: 0
+    constantValue: 0
+    variable: {fileID: 11400000, guid: 82a32c8e108493d46b225b7b79724287, type: 2}
+  maxGoodHealth:
+    useConstant: 1
+    constantValue: 10
+    variable: {fileID: 0}
+  maxBadHealth:
+    useConstant: 1
+    constantValue: 10
+    variable: {fileID: 0}
 --- !u!4 &620929319
 Transform:
   m_ObjectHideFlags: 0
@@ -461,7 +477,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 620929317}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d98c81bd2502f724eb3ad8f8bc587496, type: 3}
@@ -592,7 +608,7 @@ MonoBehaviour:
   - {fileID: 1964871497843174, guid: a9a09f0ea0fe36f4ba245ed9d0754cfc, type: 2}
   enemyCount: 20
   spawnWait: 0.5
-  enemyOnly: 1
+  enemyOnly: 0
 --- !u!1 &684762192
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,12 +895,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.09375, y: 0.5}
-      - {x: -0.5, y: -0.3125}
-      - {x: -0.5, y: -0.5}
-      - {x: 0.5, y: -0.5}
-      - {x: 0.5, y: -0.3125}
-      - {x: 0.09375, y: 0.5}
+    - - {x: -0.11979717, y: 0.25273097}
+      - {x: -0.27509302, y: -0.1210109}
+      - {x: -0.2869861, y: -0.3345586}
+      - {x: 0.28056562, y: -0.3345586}
+      - {x: 0.27140808, y: -0.1292187}
+      - {x: 0.13763767, y: 0.25273108}
 --- !u!114 &1028638158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4567,10 +4583,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 1964871497843174, guid: a9a09f0ea0fe36f4ba245ed9d0754cfc, type: 2}
+  - {fileID: 1635240411547304, guid: b2491aec26edd8c41b9223c97cf17add, type: 2}
   enemyCount: 10
   spawnWait: 1
-  enemyOnly: 0
+  enemyOnly: 1
 --- !u!1 &1539428181
 GameObject:
   m_ObjectHideFlags: 0
@@ -4715,7 +4731,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 1964871497843174, guid: a9a09f0ea0fe36f4ba245ed9d0754cfc, type: 2}
+  - {fileID: 1635240411547304, guid: b2491aec26edd8c41b9223c97cf17add, type: 2}
+  - {fileID: 1823595345856088, guid: 7fecd36682407ee47aac6f891f2dca46, type: 2}
   enemyCount: 50
   spawnWait: 0.3
   enemyOnly: 1
