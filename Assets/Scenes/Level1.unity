@@ -380,9 +380,9 @@ MonoBehaviour:
   waveCount: 0
   hazards:
   - {fileID: 1964871497843174, guid: a9a09f0ea0fe36f4ba245ed9d0754cfc, type: 2}
-  - {fileID: 1823595345856088, guid: 7fecd36682407ee47aac6f891f2dca46, type: 2}
+  - {fileID: 1907082098008176, guid: b4c8690bdb6375d4c889aeeba66d0de4, type: 2}
   - {fileID: 1635240411547304, guid: b2491aec26edd8c41b9223c97cf17add, type: 2}
-  - {fileID: 1913069569525304, guid: d9e1c6ca450bd96479765c92658f64c2, type: 2}
+  - {fileID: 1178379383029666, guid: 2fceb4f5e129bba42a60de99bada3362, type: 2}
   spawnValues: {x: 5, y: 5}
   scoreText: {fileID: 65592186}
   restartText: {fileID: 524731930}
