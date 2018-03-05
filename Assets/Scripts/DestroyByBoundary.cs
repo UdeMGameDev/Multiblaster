@@ -6,18 +6,18 @@ public class DestroyByBoundary : MonoBehaviour {
 
     public FloatReference hostHealth;
 
-    void OnTriggerExit2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(hostHealth.variable.value);
+        Debug.Log(hostHealth.variable.Value);
         // Destroy everything that leaves the trigger
 
         if (other.tag == "Enemy")
-        {
-            hostHealth.variable.Value = hostHealth.variable.value - 5f;
+        {   
+            hostHealth.variable.Value = hostHealth.variable.Value - 5f;
         }
         else if (other.tag == "GoodCell")
         {
-            hostHealth.variable.Value = hostHealth.variable.value - 1f;
+            hostHealth.variable.Value = hostHealth.variable.Value - 1f;
         }
 
         Destroy(other.gameObject);

@@ -6,6 +6,7 @@ using UnityEngine;
 public class FloatVariable : ScriptableObject {
 
 	public float value;
+	public float maxValue;
 
 
 	public float Value {
@@ -14,12 +15,13 @@ public class FloatVariable : ScriptableObject {
 		{
 			if (value < 0)
             	this.value = 0;
-        
+			else if (value > maxValue)
+				this.value = maxValue;
 			else
 				this.value = value;
 		}
 	}
 
-	public float maxValue;
+
 	
 }

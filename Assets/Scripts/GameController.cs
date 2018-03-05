@@ -73,6 +73,7 @@ public class GameController : MonoBehaviour {
         InitializeVariables();
 
         StartCoroutine(SpawnWaves());
+        StartCoroutine(SpawnRedBloodCells());
     }
 
     private void Update()
@@ -97,12 +98,14 @@ public class GameController : MonoBehaviour {
 
         yield return new WaitForSeconds(startWait + flickerWait * flickerNumber); //To wait for the player to mentally prepare
         
+        
+
         while (true)
         {
 
         
             Wave currentWave = GenerateWave(waveCount);
-            Debug.Log(currentWave.enemyCount);
+        
 
             if (!currentWave.noEnemies) StartCoroutine(Flicker(warningText, "Prepare to fire!", 4));
 
@@ -125,7 +128,7 @@ public class GameController : MonoBehaviour {
                     break;
                 }
             }
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(4f);
 
             waveCount += 1;
 
@@ -180,8 +183,8 @@ public class GameController : MonoBehaviour {
         }
 
 
-       // return new Wave(enemyTypes, enemyCount, spawnWait, noEnemies);
-       return new Wave(enemyTypes, 25, 0.5f, false);
+       return new Wave(enemyTypes, enemyCount, spawnWait, noEnemies);
+       //return new Wave(enemyTypes, 25, 0.5f, false);
         
     }
 
@@ -201,5 +204,25 @@ public class GameController : MonoBehaviour {
         }
 
         return enemyTypes;
+    }
+
+    IEnumerator SpawnRedBloodCells()
+    {
+        float startTime = Time.time;
+
+        yield return new WaitForSeconds(startWait + flickerWait * flickerNumber);
+
+        while(true)
+        {
+            float timeDiff = Time.time - startTime;
+
+            Vector2 spawnPosition = new Vector2(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y);
+            GameObject cell = hazards[0];
+            Instantiate(cell, spawnPosition, Quaternion.identity);
+
+            float spawnRate = -0.022f * timeDiff + 3;
+            yield return new WaitForSeconds(Mathf.Clamp(spawnRate, 1f, 5f));
+        }
+        
     }
 }
