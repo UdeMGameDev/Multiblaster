@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114554550872344146}
   m_Layer: 0
   m_Name: GlobuleBlanc
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,12 +121,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1654669179208196, guid: 5cb48ef5b9662b346b950c334d8d4627, type: 2}
-  playerExplosion: {fileID: 100008, guid: e697d8da81dd9fe47884fc93f9c96b2d, type: 2}
+  playerExplosion: {fileID: 1664019944041860, guid: 80dafd9835110ab4c82c16b7495df052,
+    type: 2}
   HPValue: -1
   affectedHP:
     useConstant: 0
     constantValue: 0
-    variable: {fileID: 11400000, guid: 93c589c5a560d72489d211da93dc861d, type: 2}
+    variable: {fileID: 11400000, guid: 82a32c8e108493d46b225b7b79724287, type: 2}
 --- !u!212 &212656724167553216
 SpriteRenderer:
   m_ObjectHideFlags: 1

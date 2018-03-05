@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 50233231938765528}
   m_Layer: 0
   m_Name: Bacterie
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,7 +123,7 @@ MonoBehaviour:
   explosion: {fileID: 1654669179208196, guid: 6e900fa43fca2eb4a92f10bee0872cf2, type: 2}
   playerExplosion: {fileID: 1290511506993658, guid: 712eefaa4a360084c9467c729b90621d,
     type: 2}
-  HPValue: 2
+  HPValue: -2
   affectedHP:
     useConstant: 0
     constantValue: 0

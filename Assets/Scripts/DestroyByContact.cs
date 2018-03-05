@@ -26,14 +26,62 @@ public class DestroyByContact : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
+
+        string tag = this.tag;
+        string otherTag = other.tag;
+
+        if (tag == "PlayerShot")
+        {
+            return;
+        }
+
+        else if (tag == "EnemyShot")
+        {
+            if (otherTag == "Player")
+            {
+                Debug.Log("Player Destroyed");
+            }
+        }
+
+        else if (tag == "Enemy" || tag == "GoodCell")
+        {
+  
+            if (other.tag == "Player")
+            {
+                affectedHP.variable.Value += HPValue;
+                Destroy(gameObject);
+                Instantiate(explosion, transform.position, transform.rotation);
+
+                if (affectedHP.variable.Value <= 0)
+                {
+                    Destroy(other.gameObject); //This is destroyed at the end of the frame
+                    
+                    Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
+                    gameController.GameOver();
+                }
+                
+            }
+            else if (otherTag == "PlayerShot")
+            {
+                Destroy(other.gameObject);
+                Destroy(gameObject);
+
+                Instantiate(explosion, transform.position, transform.rotation);
+            }
+            
+        }
+          
+        /*
         if (other.tag == "Boundary" || other.tag == "Enemy") //To avoid collision between enemies
         {
             return;
         }
+        
         //ce bout de code est dégueu, à changer (c'est moi qui l'a écrit) ;) - Rémy
-        if ((CompareTag("PlayerShot") || CompareTag("EnemyShot")) && other.CompareTag("PlayerShot") ){
+        if ((this.tag == "PlayerShot" || CompareTag("EnemyShot")) && other.CompareTag("PlayerShot") ){
             return;
         }
+
         if (other.CompareTag("EnemyShot"))
         {
             if (CompareTag("PlayerShot") || CompareTag("EnemyShot")){
@@ -45,19 +93,18 @@ public class DestroyByContact : MonoBehaviour {
         }
 
         if (explosion != null)
-            {
+        {
             Instantiate(explosion, transform.position, transform.rotation); //Asteroid explosion
-            }
+        }
 
         //Player explosion if the ship runs into an enemy
         if (other.CompareTag ("Player"))
         {
-            Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
-            gameController.GameOver();
+            //Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
+            //gameController.GameOver();
         }
+        */
 
-        affectedHP.variable.value += HPValue;
-        Destroy(other.gameObject); //This is destroyed at the end of the frame
-        Destroy(gameObject);
+       
     }
 }

@@ -9,6 +9,7 @@ TagManager:
   - BG
   - Boundary
   - PlayerShot
+  - GoodCell
   layers:
   - Default
   - TransparentFX

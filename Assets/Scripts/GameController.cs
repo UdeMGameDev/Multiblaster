@@ -34,8 +34,6 @@ public class GameController : MonoBehaviour {
 
     public FloatReference hostHealth;
     public FloatReference shipHealth;
-    public FloatReference maxHostHealth;
-    public FloatReference maxShipHealth;
 
     IEnumerator Flicker (Text textObj, string text, int flickerNumber = 4, bool loop = false)
     {
@@ -79,6 +77,7 @@ public class GameController : MonoBehaviour {
 
     private void Update()
     {
+        //Debug.Log(shipHealth.value);
         if (Input.GetKeyDown(KeyCode.Escape)) //Press Escape to quit at any time
         {
             Application.Quit();
@@ -136,8 +135,8 @@ public class GameController : MonoBehaviour {
     }
 
     private void InitializeVariables(){
-        hostHealth.variable.value = maxHostHealth.value;
-        shipHealth.variable.value = maxShipHealth.value;
+        hostHealth.variable.Value = hostHealth.variable.maxValue;
+        shipHealth.variable.Value = shipHealth.variable.maxValue;
     }
 
     void UpdateScore() //To update the score on the GUI text
@@ -160,7 +159,7 @@ public class GameController : MonoBehaviour {
     public Wave GenerateWave(int waveCount)
     {
         int enemyCount = 10 + waveCount + Random.Range(0, waveCount / 5);
-        float spawnWait = -(0.15f * waveCount) + 2f;
+        float spawnWait = -(0.30f * waveCount) + 2f;
         if (spawnWait < 0.2f)
         {
             spawnWait = 0.2f;
@@ -181,7 +180,9 @@ public class GameController : MonoBehaviour {
         }
 
 
-        return new Wave(enemyTypes, enemyCount, spawnWait, noEnemies);
+       // return new Wave(enemyTypes, enemyCount, spawnWait, noEnemies);
+       return new Wave(enemyTypes, 25, 0.5f, false);
+        
     }
 
 
