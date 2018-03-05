@@ -163,6 +163,7 @@ public class GameController : MonoBehaviour {
 
     public Wave GenerateWave(int waveCount)
     {
+
         int enemyCount = 10 + waveCount + Random.Range(0, waveCount / 5);
         float spawnWait = -(0.30f * waveCount) + 2f;
         if (spawnWait < 0.5f)

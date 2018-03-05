@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 114334704288434898}
   m_Layer: 0
   m_Name: GlobuleBlanc
-  m_TagString: Enemy
+  m_TagString: GoodCell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15962e4fec0cfd940a43d0ea29c187a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -2
+  speed: -3
 --- !u!198 &198070040958318308
 ParticleSystem:
   m_ObjectHideFlags: 1
