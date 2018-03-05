@@ -23,8 +23,8 @@ GameObject:
   - component: {fileID: 95359975225067750}
   - component: {fileID: 58780003346132706}
   - component: {fileID: 114255123581855398}
-  - component: {fileID: 114896496991710564}
   - component: {fileID: 50233231938765528}
+  - component: {fileID: 114775038833905542}
   m_Layer: 0
   m_Name: Bacterie
   m_TagString: Enemy
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: -2
---- !u!114 &114896496991710564
+--- !u!114 &114775038833905542
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -117,17 +117,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1178379383029666}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8cf70520cd5a864a8cfb05b4ba9b84e, type: 3}
+  m_Script: {fileID: 11500000, guid: 8dcda6b6bdb564f49ad421c766bf014d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1654669179208196, guid: 6e900fa43fca2eb4a92f10bee0872cf2, type: 2}
-  playerExplosion: {fileID: 1290511506993658, guid: 712eefaa4a360084c9467c729b90621d,
+  playerExplosion: {fileID: 1664019944041860, guid: 80dafd9835110ab4c82c16b7495df052,
     type: 2}
-  HPValue: -2
+  HPValue: -3
   affectedHP:
     useConstant: 0
     constantValue: 0
-    variable: {fileID: 11400000, guid: 93c589c5a560d72489d211da93dc861d, type: 2}
+    variable: {fileID: 11400000, guid: 82a32c8e108493d46b225b7b79724287, type: 2}
 --- !u!212 &212380277119255810
 SpriteRenderer:
   m_ObjectHideFlags: 1

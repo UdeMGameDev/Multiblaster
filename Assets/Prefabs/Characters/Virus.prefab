@@ -21,10 +21,10 @@ GameObject:
   - component: {fileID: 4779831993783452}
   - component: {fileID: 212021095657662718}
   - component: {fileID: 114493110736740916}
-  - component: {fileID: 114597752674539094}
   - component: {fileID: 95748308037939620}
   - component: {fileID: 50161524918547564}
   - component: {fileID: 58282820109170424}
+  - component: {fileID: 114744370211438510}
   m_Layer: 0
   m_Name: Virus
   m_TagString: Enemy
@@ -74,7 +74,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: -1
---- !u!114 &114597752674539094
+--- !u!114 &114744370211438510
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -117,13 +117,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1635240411547304}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8cf70520cd5a864a8cfb05b4ba9b84e, type: 3}
+  m_Script: {fileID: 11500000, guid: 8dcda6b6bdb564f49ad421c766bf014d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1654669179208196, guid: 95f2efdf79421a244b72cd02dbbc8385, type: 2}
-  playerExplosion: {fileID: 1290511506993658, guid: 712eefaa4a360084c9467c729b90621d,
+  playerExplosion: {fileID: 1664019944041860, guid: 80dafd9835110ab4c82c16b7495df052,
     type: 2}
-  HPValue: -3
+  HPValue: -2
   affectedHP:
     useConstant: 0
     constantValue: 0

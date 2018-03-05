@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour {
 
     public int waveCount = 0;
     public GameObject[] hazards;
+    public GameObject[] items;
 
     public Wave[] waves;
 
@@ -74,6 +75,7 @@ public class GameController : MonoBehaviour {
 
         StartCoroutine(SpawnWaves());
         StartCoroutine(SpawnRedBloodCells());
+        StartCoroutine(SpawnItems());
     }
 
     private void Update()
@@ -224,5 +226,18 @@ public class GameController : MonoBehaviour {
             yield return new WaitForSeconds(Mathf.Clamp(spawnRate, 1f, 5f));
         }
         
+    }
+
+    IEnumerator SpawnItems()
+    {
+        yield return new WaitForSeconds(startWait + flickerWait * flickerNumber);
+
+        while (true)
+        {
+            Vector2 spawnPosition = new Vector2(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y);
+
+            yield return new WaitForSeconds(15f);
+            Instantiate(items[0], spawnPosition, Quaternion.identity);
+        }
     }
 }

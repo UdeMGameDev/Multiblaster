@@ -56,10 +56,12 @@
      <Compile Include="Assets\Scripts\DestroyByBoundary.cs" />
      <Compile Include="Assets\Scripts\DestroyByContact.cs" />
      <Compile Include="Assets\Scripts\DestroyByTime.cs" />
+     <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\EvasiveManeuver.cs" />
      <Compile Include="Assets\Scripts\FloatReference.cs" />
      <Compile Include="Assets\Scripts\FloatVariable.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\Item.cs" />
      <Compile Include="Assets\Scripts\Mover.cs" />
      <Compile Include="Assets\Scripts\ParticleSequence.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
