@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
 
     public float speed; //Speed of the shots
 
+    public FloatReference shipAmmo;
+
     void Start()
 
     {   //Finds the Game Controller object, if any, for each instantiation of the enemy
@@ -40,15 +42,19 @@ public class PlayerController : MonoBehaviour
 		shotSpawn = transform.Find ("ShotSpawn");
         rb = GetComponent<Rigidbody2D>();
 
+        shipAmmo.variable.value = 100f;
+
     }
 
     void Update()
     {
 
-        if (Input.GetButton("Fire1") && Time.time > nextFire)
+        if (Input.GetButton("Fire1") && Time.time > nextFire && shipAmmo.variable.value > 0)
         {
             nextFire = Time.time + fireRate; //Update the timers for shots
             Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+
+            shipAmmo.variable.value -= 5;
         }
     }
 

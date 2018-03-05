@@ -13,11 +13,11 @@ public class DestroyByBoundary : MonoBehaviour {
 
         if (other.tag == "Enemy")
         {   
-            hostHealth.variable.Value = hostHealth.variable.Value - 5f;
+            hostHealth.variable.Value -= 5f;
         }
         else if (other.tag == "GoodCell")
         {
-            hostHealth.variable.Value = hostHealth.variable.Value - 1f;
+            hostHealth.variable.Value += 1f;
         }
 
         Destroy(other.gameObject);
