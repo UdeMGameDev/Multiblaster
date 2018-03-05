@@ -165,9 +165,9 @@ public class GameController : MonoBehaviour {
     {
         int enemyCount = 10 + waveCount + Random.Range(0, waveCount / 5);
         float spawnWait = -(0.30f * waveCount) + 2f;
-        if (spawnWait < 0.2f)
+        if (spawnWait < 0.5f)
         {
-            spawnWait = 0.2f;
+            spawnWait = 0.5f;
         }
 
         GameObject[] enemyTypes;
@@ -237,7 +237,8 @@ public class GameController : MonoBehaviour {
             Vector2 spawnPosition = new Vector2(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y);
 
             yield return new WaitForSeconds(15f);
-            Instantiate(items[0], spawnPosition, Quaternion.identity);
+            int random = Random.Range(0, items.Length);
+            Instantiate(items[random], spawnPosition, Quaternion.identity);
         }
     }
 }

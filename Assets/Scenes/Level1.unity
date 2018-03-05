@@ -538,6 +538,7 @@ MonoBehaviour:
   - {fileID: 1178379383029666, guid: 2fceb4f5e129bba42a60de99bada3362, type: 2}
   items:
   - {fileID: 1586877533790790, guid: dce1287b402a9aa43893cf528aa77e00, type: 2}
+  - {fileID: 1896669676024570, guid: 9946467188c1a85418f36f1b94995f58, type: 2}
   spawnValues: {x: 5, y: 5}
   scoreText: {fileID: 65592186}
   restartText: {fileID: 524731930}
@@ -575,7 +576,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 620929317}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d98c81bd2502f724eb3ad8f8bc587496, type: 3}

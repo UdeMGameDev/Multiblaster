@@ -52,7 +52,11 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButton("Fire1") && Time.time > nextFire && shipAmmo.variable.value > 0)
         {
             nextFire = Time.time + fireRate; //Update the timers for shots
+
+
             Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+             Instantiate(shot, shotSpawn.position + Vector3.right / 2, shotSpawn.rotation);
+              Instantiate(shot, shotSpawn.position - Vector3.right / 2, shotSpawn.rotation);
 
             shipAmmo.variable.value -= 5;
         }
