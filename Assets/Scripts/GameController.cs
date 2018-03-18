@@ -203,7 +203,7 @@ public class GameController : MonoBehaviour {
         }
         else
         {
-            enemyTypes = new GameObject[]{hazards[Random.Range(0,hazards.Length)]};
+            enemyTypes = new GameObject[]{hazards[Random.Range(0,hazards.Length+1)]};
         }
 
         return enemyTypes;

@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1654669179208196, guid: 95f2efdf79421a244b72cd02dbbc8385, type: 2}
-  playerExplosion: {fileID: 1664019944041860, guid: 80dafd9835110ab4c82c16b7495df052,
+  playerExplosion: {fileID: 1290511506993658, guid: 712eefaa4a360084c9467c729b90621d,
     type: 2}
   HPValue: -2
   affectedHP:
