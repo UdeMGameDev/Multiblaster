@@ -8,7 +8,6 @@ public class DestroyByBoundary : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(hostHealth.variable.Value);
         // Destroy everything that leaves the trigger
 
         if (other.tag == "Enemy")

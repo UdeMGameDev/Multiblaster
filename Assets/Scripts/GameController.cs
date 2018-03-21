@@ -60,6 +60,8 @@ public class GameController : MonoBehaviour {
 
     void Start()
     {
+
+        Time.timeScale *= 2;
         gameOver = false;
         restart = false;
         restartText.text = ("");
@@ -132,6 +134,8 @@ public class GameController : MonoBehaviour {
             }
             yield return new WaitForSeconds(4f);
 
+            Debug.Log("Wave " + waveCount + " Finished");
+
             waveCount += 1;
 
         }
@@ -203,7 +207,7 @@ public class GameController : MonoBehaviour {
         }
         else
         {
-            enemyTypes = new GameObject[]{hazards[Random.Range(0,hazards.Length+1)]};
+            enemyTypes = new GameObject[]{hazards[Random.Range(0,hazards.Length)]};
         }
 
         return enemyTypes;
