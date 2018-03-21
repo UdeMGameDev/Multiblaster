@@ -60,6 +60,20 @@ public class PlayerController : MonoBehaviour
 
             shipAmmo.variable.value -= 5;
         }
+        else if (Input.GetKey("space") && Time.time > nextFire && shipAmmo.variable.value > 0){
+
+            nextFire = Time.time + fireRate; //Update the timers for shots
+            Instantiate(shot, shotSpawn.position, Quaternion.Euler(0, 0, 10));
+            Instantiate(shot, shotSpawn.position, Quaternion.Euler(0, 0, 20));
+            Instantiate(shot, shotSpawn.position, Quaternion.Euler(0, 0, 30));
+            Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+            Instantiate(shot, shotSpawn.position, Quaternion.Euler(0, 0, -10));
+            Instantiate(shot, shotSpawn.position, Quaternion.Euler(0, 0, -20));
+            Instantiate(shot, shotSpawn.position, Quaternion.Euler(0, 0, -30));
+
+
+            shipAmmo.variable.value -= 25;
+        }
     }
 
     void FixedUpdate ()
