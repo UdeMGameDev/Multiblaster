@@ -174,7 +174,7 @@ public class GameController : MonoBehaviour {
         GameObject[] enemyTypes;
 
         bool noEnemies;
-        if (spawnWait % 5 == 0)
+        if (waveCount % 5 == 0)
         {
             noEnemies = true;
             enemyTypes = new GameObject[]{hazards[0]};
