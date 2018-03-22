@@ -61,7 +61,6 @@ public class GameController : MonoBehaviour {
     void Start()
     {
 
-        Time.timeScale *= 2;
         gameOver = false;
         restart = false;
         restartText.text = ("");
@@ -146,6 +145,7 @@ public class GameController : MonoBehaviour {
     private void InitializeVariables(){
         hostHealth.variable.Value = hostHealth.variable.maxValue;
         shipHealth.variable.Value = shipHealth.variable.maxValue;
+        
     }
 
     void UpdateScore() //To update the score on the GUI text
@@ -235,13 +235,15 @@ public class GameController : MonoBehaviour {
 
     IEnumerator SpawnItems()
     {
+        float waitTime = 7.5f;
+
         yield return new WaitForSeconds(startWait + flickerWait * flickerNumber);
 
         while (true)
         {
             Vector2 spawnPosition = new Vector2(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y);
 
-            yield return new WaitForSeconds(15f);
+            yield return new WaitForSeconds(waitTime);
             int random = Random.Range(0, items.Length);
             Instantiate(items[random], spawnPosition, Quaternion.identity);
         }

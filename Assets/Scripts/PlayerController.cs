@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
 		shotSpawn = transform.Find ("ShotSpawn");
         rb = GetComponent<Rigidbody2D>();
 
-        shipAmmo.variable.value = 100f;
+        shipAmmo.variable.value = shipAmmo.variable.maxValue;
 
     }
 
@@ -55,8 +55,6 @@ public class PlayerController : MonoBehaviour
 
 
             Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
-            //Instantiate(shot, shotSpawn.position + Vector3.right / 2, shotSpawn.rotation);
-            //Instantiate(shot, shotSpawn.position - Vector3.right / 2, shotSpawn.rotation);
 
             shipAmmo.variable.value -= 5;
         }

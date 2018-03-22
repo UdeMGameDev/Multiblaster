@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ea02de553413aa4db2a44c1cc796f94, type: 3}
   m_Name: ShipAmmo
   m_EditorClassIdentifier: 
-  value: 0
-  maxValue: 100
+  value: 195
+  maxValue: 200
